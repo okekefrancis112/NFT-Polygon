@@ -1,18 +1,17 @@
 import { ethers } from "hardhat";
 
+// RINKEBY CONTRACT ADDRESS: 0x6dE4aA9B7449Fa424ca69BBB3243364A4d2eBAF5
+// OPENSEA: https://testnets.opensea.io/assets/rinkeby/0xf81b7c93811a6c7440e4778c744770d6c03191b7/0
+
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
 
-  const lockedAmount = ethers.utils.parseEther("1");
+  const cryptoPunks = await ethers.getContractFactory("NFT");
+  const CryptoPunks = await cryptoPunks.deploy();
 
-  const Lock = await ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+  await CryptoPunks.deployed();
 
-  await lock.deployed();
-
-  console.log(`Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`);
+  console.log(`CryptoPunks is deployed to ${CryptoPunks.address}`);
+  
 }
 
 // We recommend this pattern to be able to use async/await everywhere
