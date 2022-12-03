@@ -17,9 +17,9 @@ async function main() {
 
 
     const nft = await ethers.getContractFactory("NFT");
-    const mint = await nft.attach("0xE35546d6418f206DE55eC67b4BCEF010322B8C50")
+    const mint = await nft.attach("0xB72705c99DF57aE0B4aedD0B20a69D809db9136E")
 
-    const minted = await mint.safeMint("0x23d5C0bAdf63ff6422B5B9310211d9BcE147e720", "https://gateway.pinata.cloud/ipfs/QmZmhPD9GHF4SCism94hbxXjrM53TTG1ugXhX9E3e47krk");
+    const minted = await mint.safeMint("0x5DE9d9C1dC9b407a9873E2F428c54b74c325b82b", "https://gateway.pinata.cloud/ipfs/QmStPstEPYcEsWsHmQrDNmxeN5mE1cajMjU3u49UtQtiLD");
 
     console.log("Minted NFT: ", minted);
 

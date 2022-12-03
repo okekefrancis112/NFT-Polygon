@@ -11,7 +11,7 @@ contract NFT is ERC721URIStorage{
     Counters.Counter private _myCounter;
     uint256 MAX_SUPPLY = 50;
 
-    // constructor() ERC721("CRYPTOPUNKS", "C") {}
+    constructor() ERC721("CRYPTOPUNKS", "C") {}
     // constructor() ERC721("Azuki", "AZUKI") {}
     // constructor() ERC721("BoredApeYachtClub", "BAYC") {}
     // constructor() ERC721("CloneX", "CloneX") {}
@@ -20,7 +20,7 @@ contract NFT is ERC721URIStorage{
     // constructor() ERC721("Doodles", "DOODLE") {}
     // constructor() ERC721("MutantApeYachtClub", "MAYC") {}
     // constructor() ERC721("VeeFriends", "VFT") {}
-    constructor() ERC721("World Of Women", "WOW") {}
+    // constructor() ERC721("World Of Women", "WOW") {}
 
     function safeMint(address to, string memory uri) public{
 
